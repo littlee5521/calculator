@@ -2,3 +2,52 @@
     display: flex;
     justify-content: center;
 }
+.content {
+    display: flex;
+    height:90vh;
+    justify-content: center;
+    align-items: center;
+}
+.calculator {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    flex-grow: 0;
+    height: 700px;
+    width: 400px;
+    background-color: gray;
+    border-style: dashed;
+    border-color: black;
+}
+.calculator-screen {
+    display: flex;
+    justify-content: end;
+    background-color: antiquewhite;
+}
+.calc-text {
+    font-size: 40px;
+    margin: 20px 0;
+}
+.calc-buttons-container{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.calc-row {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    flex: auto;
+    flex-grow: 0;
+}
+.calc-button {
+    flex: auto;
+    flex-grow: 0;
+    height: 55px;
+    width: 85px;
+    font-size: 40px;
+}
+.add{
+    height: 300px;
+}
