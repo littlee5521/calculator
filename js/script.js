@@ -33,5 +33,6 @@ allButtons.forEach(item =>{
     }
 } )
 let hi = '27'
-let bye = '28'
-console.log(+hi+ +bye)
+let bye = '28.99'
+let woah = "+"
+console.log(+hi + +bye)
