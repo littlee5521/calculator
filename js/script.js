@@ -104,7 +104,7 @@ const mathPath = {
             evaluateThis.splice(op1-1,1)
         }
         temp = temp.toString()
-        evaluateThis.splice(0,0, temp)
+        evaluateThis.splice(op1-1,0, temp)
         output.textContent = temp
         goAhead=1
     },
@@ -114,7 +114,7 @@ const mathPath = {
             evaluateThis.splice(op2-1,1)
         }
         temp = temp.toString()
-        evaluateThis.splice(0,0, temp)
+        evaluateThis.splice(op2,0, temp)
         output.textContent = temp
         goAhead=1
     },
@@ -124,7 +124,7 @@ const mathPath = {
             evaluateThis.splice(op1-1,1)
         }
         temp = temp.toString()
-        evaluateThis.splice(0,0, temp)
+        evaluateThis.splice(op1-1,0, temp)
         output.textContent = temp
         goAhead=1
     },
@@ -134,7 +134,7 @@ const mathPath = {
             evaluateThis.splice(op2-1,1)
         }
         temp = temp.toString()
-        evaluateThis.splice(0,0, temp)
+        evaluateThis.splice(op2,0, temp)
         output.textContent = temp
         goAhead=1
     }
