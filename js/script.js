@@ -78,8 +78,21 @@ function evaluation () {
     while (evaluateThis.includes('*') || evaluateThis.includes('/') ){
         let op1 = evaluateThis.indexOf('*')
         let op2 = evaluateThis.indexOf('/')
-        if (op1!=-1&&op2==-1) {
+        if (op1>op2) {
             mathPath.multiply(op1)
+        }
+        if(op1<op2){
+            mathPath.divide(op2)
+        }
+    }
+    while (evaluateThis.includes('+') || evaluateThis.includes('-') ) {
+        let op1 = evaluateThis.indexOf('+')
+        let op2 = evaluateThis.indexOf('-')
+        if (op1>op2) {
+            mathPath.add(op1)
+        }
+        if(op1<op2){
+            mathPath.subtract(op2)
         }
     }
 }
@@ -87,10 +100,38 @@ function evaluation () {
 const mathPath = {
     multiply: function(op1) {
         temp = evaluateThis[op1-1] * evaluateThis [op1+1]
-        console.log('I ran to')
         for (let i =0; i <3; i ++){
-            console.log(evaluateThis)
             evaluateThis.splice(op1-1,1)
+        }
+        temp = temp.toString()
+        evaluateThis.splice(0,0, temp)
+        output.textContent = temp
+        goAhead=1
+    },
+    divide: function(op2) {
+        temp = evaluateThis[op2-1] / evaluateThis [op2+1]
+        for (let i =0; i <3; i ++){
+            evaluateThis.splice(op2-1,1)
+        }
+        temp = temp.toString()
+        evaluateThis.splice(0,0, temp)
+        output.textContent = temp
+        goAhead=1
+    },
+    add: function(op1){
+        temp = +evaluateThis[op1-1] + +evaluateThis [op1+1]
+        for (let i =0; i <3; i ++){
+            evaluateThis.splice(op1-1,1)
+        }
+        temp = temp.toString()
+        evaluateThis.splice(0,0, temp)
+        output.textContent = temp
+        goAhead=1
+    },
+    subtract: function(op2){
+        temp = evaluateThis[op2-1] - evaluateThis [op2+1]
+        for (let i =0; i <3; i ++){
+            evaluateThis.splice(op2-1,1)
         }
         temp = temp.toString()
         evaluateThis.splice(0,0, temp)
