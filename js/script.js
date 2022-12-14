@@ -79,9 +79,13 @@ function evaluation () {
         let op1 = evaluateThis.indexOf('*')
         let op2 = evaluateThis.indexOf('/')
         if (op1>op2) {
+            console.log('X')
             mathPath.multiply(op1)
         }
+        console.log(op2)
+        console.log(op1)
         if(op1<op2){
+            console.log('/')
             mathPath.divide(op2)
         }
     }
@@ -89,9 +93,11 @@ function evaluation () {
         let op1 = evaluateThis.indexOf('+')
         let op2 = evaluateThis.indexOf('-')
         if (op1>op2) {
+            console.log('+')
             mathPath.add(op1)
         }
         if(op1<op2){
+            console.log('-')
             mathPath.subtract(op2)
         }
     }
@@ -114,7 +120,7 @@ const mathPath = {
             evaluateThis.splice(op2-1,1)
         }
         temp = temp.toString()
-        evaluateThis.splice(op2-1,0, temp)
+        evaluateThis.splice(op2,0, temp)
         output.textContent = temp
         goAhead=1
     },
